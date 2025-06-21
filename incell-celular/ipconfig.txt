@@ -1,0 +1,4 @@
+python -m http.server 8000
+http://192.168.15.141:8000
+
+

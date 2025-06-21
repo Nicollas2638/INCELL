@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+  <title>Serviços Xiaomi</title>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-site">INCELL</a>
+    <div class="menu-btn" id="menuBtn">&#9776;</div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Início</a>
+    <a href="modelos-servicos.html">Serviços</a>
+    <a href="capinhas.html">Capinhas</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="acessorios.html">Acessórios</a>
+    <a href="https://wa.me/554291045045">WhatsApp (42) 9104-5045</a>
+    <a href="tel:+5541991014462">Telefone (41) 9101-4462</a>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="container">
+    <h2>Escolha o modelo e veja os serviços disponíveis</h2>
+    <p style="text-align:center;">Todos os serviços com 3 meses de garantia!</p><br>
+
+    <!-- Botões de modelos Xiaomi -->
+    <div class="modelo-buttons" id="modeloButtons">
+      <button class="modelo-btn" data-modelo="Redmi7">Redmi 7</button>
+      <button class="modelo-btn" data-modelo="Redmi9">Redmi 9</button>
+      <button class="modelo-btn" data-modelo="RedmiNote8">Redmi Note 8</button>
+      <button class="modelo-btn" data-modelo="RedmiNote9">Redmi Note 9</button>
+      <button class="modelo-btn" data-modelo="RedmiNote10">Redmi Note 10</button>
+      <button class="modelo-btn" data-modelo="RedmiNote11">Redmi Note 11</button>
+      <button class="modelo-btn" data-modelo="Mi9">Mi 9</button>
+      <button class="modelo-btn" data-modelo="Mi10">Mi 10</button>
+      <button class="modelo-btn" data-modelo="Mi11">Mi 11</button>
+      <button class="modelo-btn" data-modelo="Mi12">Mi 12</button>
+    </div>
+
+    <!-- Serviços -->
+    <div id="servicosContainer" class="grid-container">
+      <div class="grid-item modelo-Redmi7 modelo-Redmi9 hidden">
+        <img src="" alt="Tela">
+        <h3>Troca de Tela</h3>
+        <p>R$ 210,00</p>
+      </div>
+
+      <div class="grid-item modelo-Redmi7 modelo-Redmi9 modelo-RedmiNote8 modelo-RedmiNote9 hidden">
+        <img src="https://via.placeholder.com/150" alt="Bateria">
+        <h3>Troca de Bateria</h3>
+      </div>
+
+      <div class="grid-item modelo-Mi9 modelo-Mi10 modelo-Mi11 modelo-Mi12 modelo-RedmiNote11 hidden">
+        <img src="https://via.placeholder.com/150" alt="Conector">
+        <h3>Troca de Conector</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/554291045045" target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Script JavaScript -->
+  <script>
+    const botoes = document.querySelectorAll('.modelo-btn');
+    const servicos = document.querySelectorAll('.grid-item');
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const modelo = botao.getAttribute('data-modelo');
+
+        // Marcar botão ativo
+        botoes.forEach(btn => btn.classList.remove('active'));
+        botao.classList.add('active');
+
+        // Mostrar serviços
+        servicos.forEach(item => {
+          item.classList.add('hidden');
+          if (item.classList.contains('modelo-' + modelo)) {
+            item.classList.remove('hidden');
+          }
+        });
+      });
+    });
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

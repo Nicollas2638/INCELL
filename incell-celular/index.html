@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>INCELL - Início</title>
+</head>
+<body>
+<div class="top-bar">
+  <div class="endereco">
+    📍 R. Tangará, 323 - Colonia Dona Luiza
+  </div>
+  <div class="endereco">
+    📍 R. Lagoa Dourada, 24 - Gralha Azul
+  </div>
+</div>
+
+
+  <header>
+    <a href="index.html" class="logo-site">INCELL</a>
+    <div class="menu-btn" id="menuBtn">&#9776;</div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Início</a>
+    <a href="modelos-servicos.html">Serviços</a>
+    <a href="capinhas.html">Capinhas</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="acessorios.html">Acessórios</a>
+    <a href="https://wa.me/554291045045">WhatsApp (42) 9104-5045</a>
+    <a href="tel:+5541991014462">Telefone (41) 9101-4462</a>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main-options">
+    <a href="modelos-servicos.html" class="option-box">Serviços</a>
+    <a href="capinhas.html" class="option-box">Capinhas</a>
+    <a href="peliculas.html" class="option-box">Películas</a>
+    <a href="acessorios.html" class="option-box">Acessórios</a>
+
+  </main>
+
+  <section class="mapas-section">
+  <h2>Onde estamos</h2>
+
+  <div class="mapas-container">
+    <!-- Mapa 1 -->
+<div class="mapa-box">
+  <h3>Matriz - Colonia Dona Luiza</h3>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.389932447789!2d-50.11970872388302!3d-25.038738836636755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e811e0b42a1a75%3A0x2d6e9633b50393d9!2sR.%20Tangar%C3%A1%2C%20323%20-%20Col%C3%B4nia%20Dona%20Luiza%2C%20Ponta%20Grossa%20-%20PR%2C%2084026-380!5e0!3m2!1spt-BR!2sbr!4v1716560727931!5m2!1spt-BR!2sbr" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+    <!-- Mapa 2 -->
+    <div class="mapa-box">
+      <h3>Loja 2 - Gralha Azul</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.252816447628!2d-50.08351972388292!3d-25.04342353666451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e81335b99a3a1f%3A0x9f2dc3686b205193!2sR.%20Lagoa%20Dourada%2C%2024%20-%20Contorno%2C%20Ponta%20Grossa%20-%20PR%2C%2084026-510!5e0!3m2!1spt-BR!2sbr!4v1716558349364!5m2!1spt-BR!2sbr" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+    <a href="https://wa.me/554291045045" target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

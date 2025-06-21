@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+  <title>Películas por Modelo</title>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-site">INCELL</a>
+    <div class="menu-btn" id="menuBtn">&#9776;</div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Início</a>
+    <a href="modelos-servicos.html">Serviços</a>
+    <a href="capinhas.html">Capinhas</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="acessorios.html">Acessórios</a>
+    <a href="https://wa.me/554291045045">WhatsApp (42) 9104-5045</a>
+    <a href="tel:+5541991014462">Telefone (41) 9101-4462</a>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="container">
+    <h2>Escolha o modelo da película</h2>
+
+    <div class="modelo-buttons" id="modeloButtons">
+      <button class="modelo-btn" data-modelo="vidro">Vidro</button>
+      <button class="modelo-btn" data-modelo="3d">3D</button>
+      <button class="modelo-btn" data-modelo="privacidade">Privacidade</button>
+      <button class="modelo-btn" data-modelo="gel">Gel</button>
+      <button class="modelo-btn" data-modelo="ceramica">Cerâmica</button>
+    </div>
+
+    <div id="modelosContainer" class="grid-container">
+      <div class="grid-item modelo-vidro hidden">
+        <img src="https://via.placeholder.com/150?text=Película+Vidro" alt="Película de Vidro">
+        <p>Valor: R$ 20</p>
+      </div>
+      <div class="grid-item modelo-3d hidden">
+        <img src="https://via.placeholder.com/150?text=Película+3D" alt="Película 3D">
+        <p>Valor: R$ 25</p>
+      </div>
+      <div class="grid-item modelo-privacidade hidden">
+        <img src="https://via.placeholder.com/150?text=Película+Privacidade" alt="Película Privacidade">
+        <p>Valor: R$ 30</p>
+      </div>
+      <div class="grid-item modelo-gel hidden">
+        <img src="https://via.placeholder.com/150?text=Película+Gel" alt="Película de Gel">
+        <p>Valor: R$ 15</p>
+      </div>
+      <div class="grid-item modelo-ceramica hidden">
+        <img src="https://via.placeholder.com/150?text=Película+Cerâmica" alt="Película Cerâmica">
+        <p>Valor: R$ 28</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/554291045045" target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <script>
+    const botoes = document.querySelectorAll('.modelo-btn');
+    const modelos = document.querySelectorAll('.grid-item');
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const modelo = botao.getAttribute('data-modelo');
+
+        // Marcar botão ativo
+        botoes.forEach(btn => btn.classList.remove('active'));
+        botao.classList.add('active');
+
+        // Mostrar apenas o modelo clicado
+        modelos.forEach(item => {
+          item.classList.add('hidden');
+          if (item.classList.contains('modelo-' + modelo)) {
+            item.classList.remove('hidden');
+          }
+        });
+      });
+    });
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

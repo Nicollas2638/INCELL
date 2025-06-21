@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+  <title>Serviços iPhones</title>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-site">INCELL</a>
+    <div class="menu-btn" id="menuBtn">&#9776;</div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Início</a>
+    <a href="modelos-servicos.html">Serviços</a>
+    <a href="capinhas.html">Capinhas</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="acessorios.html">Acessórios</a>
+    <a href="https://wa.me/554291045045">WhatsApp (42) 9104-5045</a>
+    <a href="tel:+5541991014462">Telefone (41) 9101-4462</a>
+  </div>
+
+  <!-- Overlay adicionado para permitir fechar a sidebar ao clicar fora -->
+  <div class="overlay" id="overlay"></div>
+
+  <div class="container">
+    <h2>Escolha o modelo e veja os serviços disponíveis</h2>
+    <p style="text-align:center;">Todos os serviços com 3 meses de garantia!</p><br>
+
+    <!-- Botões de modelos -->
+    <div class="modelo-buttons" id="modeloButtons">
+      <button class="modelo-btn" data-modelo="6">iPhone 6</button>
+      <button class="modelo-btn" data-modelo="6S">iPhone 6S</button>
+      <button class="modelo-btn" data-modelo="7">iPhone 7</button>
+      <button class="modelo-btn" data-modelo="8">iPhone 8</button>
+      <button class="modelo-btn" data-modelo="X">iPhone X</button>
+      <button class="modelo-btn" data-modelo="XR">iPhone XR</button>
+      <button class="modelo-btn" data-modelo="11">iPhone 11</button>
+      <button class="modelo-btn" data-modelo="13">iPhone 13</button>
+      <button class="modelo-btn" data-modelo="14">iPhone 14</button>
+      <button class="modelo-btn" data-modelo="15">iPhone 15</button>
+    </div>
+
+    <!-- Serviços -->
+    <div id="servicosContainer" class="grid-container">
+      <div class="grid-item modelo-6 modelo-6S hidden">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvkv2U5p92PaYJlbmoRSwgB5-6A-At2BnBPQI5psdmbWeoyu28tmpZ_DY&s=10" alt="Tela">
+        <h3>Troca de Tela</h3>
+        <p>R$ 230,00</p>
+      </div>
+
+      <div class="grid-item modelo-6 modelo-6S modelo-7 modelo-8 hidden">
+        <img src="https://via.placeholder.com/150" alt="Bateria">
+        <h3>Troca de Bateria</h3>
+      </div>
+
+      <div class="grid-item modelo-X modelo-XR modelo-11 modelo-13 modelo-14 modelo-15 hidden">
+        <img src="https://via.placeholder.com/150" alt="Conector">
+        <h3>Troca de Conector</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/554291045045" target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Script JavaScript -->
+  <script>
+    const botoes = document.querySelectorAll('.modelo-btn');
+    const servicos = document.querySelectorAll('.grid-item');
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const modelo = botao.getAttribute('data-modelo');
+
+        // Marcar botão ativo
+        botoes.forEach(btn => btn.classList.remove('active'));
+        botao.classList.add('active');
+
+        // Mostrar serviços
+        servicos.forEach(item => {
+          item.classList.add('hidden');
+          if (item.classList.contains('modelo-' + modelo)) {
+            item.classList.remove('hidden');
+          }
+        });
+      });
+    });
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
