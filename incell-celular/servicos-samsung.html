@@ -26,83 +26,243 @@
   <div class="overlay" id="overlay"></div>
 
   <div class="container">
-    <h2>Escolha o modelo e veja os serviços disponíveis</h2>
+    <h2>Escolha a linha e o modelo para ver os serviços disponíveis</h2>
     <p style="text-align:center;">Todos os serviços com 3 meses de garantia!</p><br>
 
-    <!-- Botões de modelos Samsung -->
-    <div class="modelo-buttons" id="modeloButtons">
-      <button class="modelo-btn" data-modelo="A10">Galaxy A10</button>
-      <button class="modelo-btn" data-modelo="A20">Galaxy A20</button>
-      <button class="modelo-btn" data-modelo="A30">Galaxy A30</button>
-      <button class="modelo-btn" data-modelo="A50">Galaxy A50</button>
-      <button class="modelo-btn" data-modelo="A70">Galaxy A70</button>
-      <button class="modelo-btn" data-modelo="S9">Galaxy S9</button>
-      <button class="modelo-btn" data-modelo="S10">Galaxy S10</button>
-      <button class="modelo-btn" data-modelo="S20">Galaxy S20</button>
-      <button class="modelo-btn" data-modelo="S21">Galaxy S21</button>
-      <button class="modelo-btn" data-modelo="S22">Galaxy S22</button>
+    <!-- Etapa 1: Escolher a linha -->
+    <div id="filtroLinha">
+      <button class="linha-btn" data-linha="J">Linha J</button>
+      <button class="linha-btn" data-linha="A">Linha A</button>
+      <button class="linha-btn" data-linha="S">Linha S</button>
+      <button class="linha-btn" data-linha="M">Linha M</button>
+      <button class="linha-btn" data-linha="NOTE">Linha Note</button>
+    </div><br>
+
+    <!-- Mensagem inicial -->
+    <p id="mensagemEscolhaLinha" style="text-align:center; font-weight: bold;">
+      Por favor, escolha uma linha para ver os modelos disponíveis.
+    </p>
+
+<div class="modelo-buttons" id="modeloButtons" style="display:none;">
+  <!-- botões modelo -->
+</div>
+
+      <!-- Modelos da Linha J -->
+      <button class="modelo-btn linha-J" data-modelo="J4PLUS">Galaxy J4+</button>
+      <button class="modelo-btn linha-J" data-modelo="J6PLUS">Galaxy J6+</button>
+      <button class="modelo-btn linha-J" data-modelo="J4CORE">Galaxy J4 Core</button>
+      <button class="modelo-btn linha-J" data-modelo="J5">Galaxy J5</button>
+      <button class="modelo-btn linha-J" data-modelo="J5PRO">Galaxy J5 Pro</button>
+      <button class="modelo-btn linha-J" data-modelo="J5PRIME">Galaxy J5 Prime</button>
+      <button class="modelo-btn linha-J" data-modelo="J6">Galaxy J6</button>
+      <button class="modelo-btn linha-J" data-modelo="J7PRIME">Galaxy J7 Prime</button>
+      <button class="modelo-btn linha-J" data-modelo="J700">Galaxy J700</button>
+      <button class="modelo-btn linha-J" data-modelo="J7PRO">Galaxy J7 Pro</button>
+      <button class="modelo-btn linha-J" data-modelo="J7NEO">Galaxy J7 Neo</button>
+      <button class="modelo-btn linha-J" data-modelo="J7METAL">Galaxy J7 Metal</button>
+      <button class="modelo-btn linha-J" data-modelo="J8">Galaxy J8</button>
+
+      <!-- Modelos da Linha M -->
+      <button class="modelo-btn linha-M" data-modelo="M12">Galaxy M12</button>
+      <button class="modelo-btn linha-M" data-modelo="M13M14">Galaxy M13 / M14</button>
+      <button class="modelo-btn linha-M" data-modelo="M20">Galaxy M20</button>
+      <button class="modelo-btn linha-M" data-modelo="M22">Galaxy M22</button>
+      <button class="modelo-btn linha-M" data-modelo="M23M33">Galaxy M23 / M33</button>
+      <button class="modelo-btn linha-M" data-modelo="M30">Galaxy M30</button>
+      <button class="modelo-btn linha-M" data-modelo="M31M21S">Galaxy M31 / M21 S</button>
+      <button class="modelo-btn linha-M" data-modelo="M32">Galaxy M32</button>
+      <button class="modelo-btn linha-M" data-modelo="M34">Galaxy M34</button>
+      <button class="modelo-btn linha-M" data-modelo="M51">Galaxy M51</button>
+      <button class="modelo-btn linha-M" data-modelo="M52M53">Galaxy M52 / M53</button>
+      <button class="modelo-btn linha-M" data-modelo="M54">Galaxy M54</button>
+      <button class="modelo-btn linha-M" data-modelo="M62">Galaxy M62</button>
     </div>
 
     <!-- Serviços -->
     <div id="servicosContainer" class="grid-container">
-      <div class="grid-item modelo-A10 modelo-A20 hidden">
-        <img src="" alt="Tela">
-        <h3>Troca de Tela</h3>
-        <p>R$ 220,00</p>
+      <!-- Serviços Linha J -->
+      <div class="grid-item modelo-J4PLUS modelo-J6PLUS modelo-J4CORE hidden">
+        <h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 200,00</p>
       </div>
+      <div class="grid-item modelo-J4PLUS modelo-J6PLUS modelo-J4CORE hidden">
+        <h3>Troca de Bateria</h3><p>R$ 120,00</p>
+      </div>
+      <div class="grid-item modelo-J4PLUS modelo-J6PLUS modelo-J4CORE hidden">
+        <h3>Troca de Conector</h3><p>R$ 100,00</p>
+      </div>
+      <div class="grid-item modelo-J5 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J5 hidden"><h3>Troca de Bateria</h3><p>R$ 80,00</p></div>
+      <div class="grid-item modelo-J5PRO hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J5PRO hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J5PRO hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J5PRIME hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 200,00</p></div>
+      <div class="grid-item modelo-J5PRIME hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J5PRIME hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J6 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 200,00</p></div>
+      <div class="grid-item modelo-J6 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J6 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J6 hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J7PRIME hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 200,00</p></div>
+      <div class="grid-item modelo-J7PRIME hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J7PRIME hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J700 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J700 hidden"><h3>Troca de Bateria</h3><p>R$ 80,00</p></div>
+      <div class="grid-item modelo-J700 hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J7PRO hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J7PRO hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J7PRO hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J7NEO hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J7NEO hidden"><h3>Troca de Bateria</h3><p>R$ 80,00</p></div>
+      <div class="grid-item modelo-J7NEO hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J7METAL hidden"><h3>Troca de Tela Nacional</h3><p>R$ 340,00</p></div>
+      <div class="grid-item modelo-J7METAL hidden"><h3>Troca de Bateria</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J7METAL hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
+      <div class="grid-item modelo-J8 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 200,00</p></div>
+      <div class="grid-item modelo-J8 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 350,00</p></div>
+      <div class="grid-item modelo-J8 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-J8 hidden"><h3>Troca de Conector</h3><p>R$ 100,00</p></div>
 
-      <div class="grid-item modelo-A10 modelo-A20 modelo-A30 modelo-A50 hidden">
-        <img src="https://via.placeholder.com/150" alt="Bateria">
-        <h3>Troca de Bateria</h3>
-      </div>
+      <!-- Serviços Linha M -->
+      <!-- Galaxy M12 -->
+      <div class="grid-item modelo-M12 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 250,00</p></div>
+      <div class="grid-item modelo-M12 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 380,00</p></div>
+      <div class="grid-item modelo-M12 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-M12 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
 
-      <div class="grid-item modelo-S9 modelo-S10 modelo-S20 modelo-S21 modelo-S22 hidden">
-        <img src="https://via.placeholder.com/150" alt="Conector">
-        <h3>Troca de Conector</h3>
-      </div>
+      <!-- Galaxy M13 / M14 -->
+      <div class="grid-item modelo-M13M14 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 280,00</p></div>
+      <div class="grid-item modelo-M13M14 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-M13M14 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M20 -->
+      <div class="grid-item modelo-M20 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 250,00</p></div>
+      <div class="grid-item modelo-M20 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-M20 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M22 -->
+      <div class="grid-item modelo-M22 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 400,00</p></div>
+      <div class="grid-item modelo-M22 hidden"><h3>Troca de Bateria</h3><p>R$ 140,00</p></div>
+      <div class="grid-item modelo-M22 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M23 / M33 -->
+      <div class="grid-item modelo-M23M33 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 280,00</p></div>
+      <div class="grid-item modelo-M23M33 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-M23M33 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M30 -->
+      <div class="grid-item modelo-M30 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 280,00</p></div>
+      <div class="grid-item modelo-M30 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 400,00</p></div>
+      <div class="grid-item modelo-M30 hidden"><h3>Troca de Bateria</h3><p>R$ 120,00</p></div>
+      <div class="grid-item modelo-M30 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M31 / M21 S -->
+      <div class="grid-item modelo-M31M21S hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 300,00</p></div>
+      <div class="grid-item modelo-M31M21S hidden"><h3>Troca de Tela Nacional</h3><p>R$ 850,00</p></div>
+      <div class="grid-item modelo-M31M21S hidden"><h3>Troca de Bateria</h3><p>R$ 140,00</p></div>
+      <div class="grid-item modelo-M31M21S hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M32 -->
+      <div class="grid-item modelo-M32 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 700,00</p></div>
+      <div class="grid-item modelo-M32 hidden"><h3>Troca de Bateria</h3><p>R$ 150,00</p></div>
+      <div class="grid-item modelo-M32 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M34 -->
+      <div class="grid-item modelo-M34 hidden"><h3>Troca de Bateria</h3><p>R$ 240,00</p></div>
+      <div class="grid-item modelo-M34 hidden"><h3>Troca de Conector</h3><p>R$ 120,00</p></div>
+
+      <!-- Galaxy M51 -->
+      <div class="grid-item modelo-M51 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 850,00</p></div>
+      <div class="grid-item modelo-M51 hidden"><h3>Troca de Bateria</h3><p>R$ 180,00</p></div>
+      <div class="grid-item modelo-M51 hidden"><h3>Troca de Conector</h3><p>R$ 150,00</p></div>
+
+      <!-- Galaxy M52 / M53 -->
+      <div class="grid-item modelo-M52M53 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 1.000,00</p></div>
+      <div class="grid-item modelo-M52M53 hidden"><h3>Troca de Bateria</h3><p>R$ 220,00</p></div>
+      <div class="grid-item modelo-M52M53 hidden"><h3>Troca de Conector</h3><p>R$ 160,00</p></div>
+
+      <!-- Galaxy M54 -->
+      <div class="grid-item modelo-M54 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 850,00</p></div>
+      <div class="grid-item modelo-M54 hidden"><h3>Troca de Bateria</h3><p>R$ 180,00</p></div>
+      <div class="grid-item modelo-M54 hidden"><h3>Troca de Conector</h3><p>R$ 150,00</p></div>
+
+      <!-- Galaxy M62 -->
+      <div class="grid-item modelo-M62 hidden"><h3>Troca de Tela 1ª Linha Premium</h3><p>R$ 350,00</p></div>
+      <div class="grid-item modelo-M62 hidden"><h3>Troca de Tela Nacional</h3><p>R$ 850,00</p></div>
+      <div class="grid-item modelo-M62 hidden"><h3>Troca de Bateria</h3><p>R$ 180,00</p></div>
+      <div class="grid-item modelo-M62 hidden"><h3>Troca de Conector</h3><p>R$ 150,00</p></div>
     </div>
   </div>
 
   <!-- Botão flutuante do WhatsApp -->
   <a href="https://wa.me/554291045045" target="_blank" class="floating-whatsapp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
-  <!-- Script JavaScript -->
-  <script>
-    const botoes = document.querySelectorAll('.modelo-btn');
-    const servicos = document.querySelectorAll('.grid-item');
-    const menuBtn = document.getElementById('menuBtn');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
+<script>
+    const botoesLinha = document.querySelectorAll('.linha-btn');
+const botoesModelo = document.querySelectorAll('.modelo-btn');
+const servicos = document.querySelectorAll('.grid-item');
+const modeloButtonsDiv = document.getElementById('modeloButtons');
+const mensagemEscolhaLinha = document.getElementById('mensagemEscolhaLinha');
 
-    botoes.forEach(botao => {
-      botao.addEventListener('click', () => {
-        const modelo = botao.getAttribute('data-modelo');
+window.addEventListener('load', () => {
+  botoesModelo.forEach(botao => botao.classList.add('hidden'));
+  servicos.forEach(servico => servico.classList.add('hidden'));
+  modeloButtonsDiv.style.display = 'none';
+  mensagemEscolhaLinha.style.display = 'block';
+});
 
-        // Marcar botão ativo
-        botoes.forEach(btn => btn.classList.remove('active'));
-        botao.classList.add('active');
+botoesLinha.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const linhaSelecionada = btn.getAttribute('data-linha');
 
-        // Mostrar serviços
-        servicos.forEach(item => {
-          item.classList.add('hidden');
-          if (item.classList.contains('modelo-' + modelo)) {
-            item.classList.remove('hidden');
-          }
-        });
-      });
+    botoesModelo.forEach(botao => {
+      if (botao.classList.contains('linha-' + linhaSelecionada)) {
+        botao.classList.remove('hidden');
+      } else {
+        botao.classList.add('hidden');
+      }
     });
 
-    menuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      overlay.classList.toggle('active');
-    });
+    mensagemEscolhaLinha.style.display = 'none';
+    modeloButtonsDiv.style.display = 'block';
 
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
+    botoesModelo.forEach(b => b.classList.remove('active'));
+    servicos.forEach(s => s.classList.add('hidden'));
+  });
+});
+
+botoesModelo.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const modelo = botao.getAttribute('data-modelo');
+
+    botoesModelo.forEach(b => b.classList.remove('active'));
+    botao.classList.add('active');
+
+    servicos.forEach(item => {
+      item.classList.add('hidden');
+      if (item.classList.contains('modelo-' + modelo)) {
+        item.classList.remove('hidden');
+      }
     });
-  </script>
+  });
+});
+
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+  overlay.classList.remove('active');
+});
+
+</script>
+
 </body>
 </html>

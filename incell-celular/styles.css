@@ -92,8 +92,10 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
+  width: 100%;
+  padding: 0 1rem; /* um pouco de padding lateral para evitar colar na borda */
 }
 
 .modelo-btn {
@@ -104,12 +106,32 @@ h2 {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.2s;
+  margin: 0.25rem;
+  flex-shrink: 0; /* evita que os botões encolham demais em telas pequenas */
+  white-space: nowrap; /* evita que o texto quebre, mantém botão largo o suficiente */
 }
 
+/* Hover e ativo */
 .modelo-btn:hover,
 .modelo-btn.active {
   background-color: var(--cor-primaria);
 }
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+  .modelo-buttons {
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  .modelo-btn {
+    /* Permite que o botão ocupe mais espaço, se necessário */
+    flex: 1 1 auto;
+    min-width: 120px; /* largura mínima para conforto */
+    text-align: center;
+  }
+}
+
 
 /* Estilo atualizado para grid de marcas */
 .grid-container {
@@ -127,11 +149,12 @@ h2 {
   box-shadow: 0 2px 8px var(--sombra);
   padding: 1rem;
   display: flex;
-  flex-direction: column;   /* Alinha os itens em coluna */
-  align-items: center;      /* Centraliza horizontalmente */
+  flex-direction: column;   
+  align-items: center;      
   justify-content: center;
-  height: auto;             /* Ajusta altura automática para o conteúdo */
-  gap: 0.5rem;              /* Espaço entre os itens */
+  text-align: center;
+  height: auto;             
+  gap: 0.5rem;              
   transition: transform 0.2s ease;
 }
 
@@ -144,6 +167,7 @@ h2 {
   max-height: 60px;
   max-width: 100px;
   object-fit: contain;
+  text-align: center;
 }
 
 /* Fim estilo grid de logos */
@@ -295,6 +319,32 @@ h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   color: #333;
+}
+
+.linha-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #ffffff;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--cor-secundaria);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0.3rem;
+}
+#filtroLinha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+
+.linha-btn:hover,
+.linha-btn.active {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
 }
 
 
